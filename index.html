@@ -1,0 +1,24 @@
+<!-- HTML -->
+<body style="display: flex;"><img src="./GK81T_wWYAEcwy9.jpeg" height="300px"></body>
+
+<!-- CSS -->
+<style>div{height: 100px; width: 100px;margin-left: 10px;}</style>
+
+<!-- JS -->
+<script type="module">
+import ColorThief from './node_modules/colorthief/dist/color-thief.mjs'
+const colorThief = new ColorThief();
+
+const img = document.querySelector('img');
+const paleta = colorThief.getPalette(img)
+const limite = 10
+const rgb = [limite]
+const div = [limite] 
+
+for (let index = 0; index < limite; index++) {
+    rgb[index] = paleta[index]
+    div[index] = document.createElement('div');
+    document.querySelector('body').appendChild(div[index])
+    div[index].style.backgroundColor=`rgb(${paleta[index][0]}, ${paleta[index][1]}, ${paleta[index][2]})`    
+}
+</script>
